@@ -1,0 +1,50 @@
+[package]
+name = "nova-portfolio"
+version = "1.1.0"
+description = "Nova finance nToken"
+authors = ["Nova Fianace Maintainers <bacem.bergaoui@gmail.com>"]
+developers = ["<korbosli.jawaher@gmail.com> <zouaoui.karima09@gmail.com>"]
+repository = "https://git-codecommit.us-east-2.amazonaws.com/v1/repos/nova"
+license = "Apache-2.0"
+edition = "2018"
+exclude = ["js/**"]
+
+[features]
+
+no-entrypoint = []
+cpi = ["no-entrypoint"]
+
+[dependencies]
+borsh = "0.9.1"
+borsh-derive = "0.9.1"
+num-bigint =  "0.4"
+arrayref = "0.3.6"
+num-derive = "0.3"
+num-traits = "0.2"
+num_enum = "0.5.1"
+#solana-program = "1.7.11"
+thiserror = "1.0"
+spl-token = { version = "3.1.0", features = ["no-entrypoint"] }
+#NT-serum-swap = { version ="=0.4.6" ,features = ["cpi"] } #mainnet
+# #ntserum-swap = { version ="0.5.1" ,features = ["cpi"] } #devnet
+#portfolio_quarry ="=0.1.29" #mainnet
+bincode = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+#anchor-lang = { git = "https://github.com/project-serum/anchor", tag = "v0.20.1", version = "0.20.1", package = "anchor-lang" }
+# bew version deploy localnet 
+ntoken-solana-models ="=0.1.36"
+whirlpool = { git = "https://github.com/orca-so/whirlpools", tag = "0.4.0",features = ["cpi"]}
+anchor-lang = { git = "https://github.com/project-serum/anchor", tag = "v0.20.1", version = "0.20.1", package = "anchor-lang" }
+solana-program = "1.8.12"
+
+[dependencies.num]
+version = "0.4"
+default-features = false
+[dev-dependencies]
+solana-sdk = "1.9.9"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
